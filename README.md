@@ -9,7 +9,7 @@ Usage
 Specify group name and service name for your basic keychain informations. Service name should not be nil, otherwise the crash happens when adding or retrieving the key.
 
 ```objective-c
-DDKeyChain *myKeyChain = [DDkeyChain keychainWithService:aServiceNotNil group:aGroup];                                             
+DDKeyChain *myKeyChain = [DDKeyChain keychainWithService:aServiceNotNil group:aGroup];
 ```
 
 ###Add Key
