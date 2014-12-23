@@ -1,4 +1,33 @@
-DDKeyChainAccess
-================
+Key Chain Access
+----------------
 
-DDKeyChain is the sample code that demonstrate how to access your keychain data from Mac or iOS device.
+The sample code demonstrates how to access the keychain information through Apple's API. 
+
+Usage
+----------
+###Create DDKeyChain
+Specify group name and service name for your basic keychain informations. Service name should not be nil, otherwise the crash happens when adding or retrieving the key.
+
+```objective-c
+DDKeyChain *myKeyChain = [DDkeyChain keychainWithService:aServiceNotNil group:aGroup];                                             
+```
+
+###Add Key
+
+```objective-c
+NSString *passwordKey = @"passwordKey";
+NSData *aKeyChainData = [@"thisIsNotMyPassword" dataUsingEncoding:NSUTF8StringEncoding];
+BOOL isSuccessful = [myKeyChain addKey:passwordKey data:aKeyChainData];
+```
+
+###Remove Key
+
+```objective-c
+BOOL isRemoved = [myKeyChain removeKey:passwordKey];
+```
+
+###Find Data
+
+```objective-c
+NSData *myData = [myKeyChain findDataByKey:passwordKey];
+```
