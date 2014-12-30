@@ -38,6 +38,7 @@
                             (__bridge id)kSecAttrService: self.serviceName,
                             (__bridge id)kSecAttrGeneric: aKey,
                             (__bridge id)kSecAttrAccount: aKey,
+                            (__bridge id)kSecAttrAccessibleAlwaysThisDeviceOnly: (__bridge id)kSecAttrAccessible
                             };
     if (self.groupName) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:query];
