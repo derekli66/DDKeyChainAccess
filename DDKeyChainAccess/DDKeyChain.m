@@ -17,6 +17,8 @@
 #pragma mark - Initialization
 - (instancetype)initWithService:(NSString *)aServiceNotNil group:(NSString *)aGroup
 {
+    NSAssert(aServiceNotNil != nil, @"The string for service name must not be nil.");
+
     self = [super init];
     if (self) {
         _serviceName = aServiceNotNil;
